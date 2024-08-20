@@ -21,7 +21,7 @@ A = (weight_sum*S_xy - S_x*S_y)/delta
 B = (S_xx*S_y - S_x*S_xy)/delta
 A_uncertainty = np.sqrt(weight_sum/delta)
 B_uncertainty = np.sqrt(S_xx/delta)
-residuals = y - A*x + B
+residuals = y - (A * x + B)
 chi_squared = np.sum(weights*(residuals)**2)
 print("residuals: ", residuals)
 print("Chi^2 value is: ", chi_squared)
