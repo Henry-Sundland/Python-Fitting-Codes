@@ -9,6 +9,8 @@ At this moment, this repository has the following python codes I made:
 
 2.) Least Linear squares (with weights to fit to data that includes uncertainties)
 
+3.) Power law fit with weighted uncertainties
+
 
 
 
@@ -18,3 +20,6 @@ At this moment, this repository has the following python codes I made:
 
 
 2.) Least Linear Squares (with weights to handle data with uncertainties) - performs a weighted linear least squares fit to the data. It calculates the slope and y-intercept of the best-fit line, along with their uncertainties, and computes the chi-squared value to assess the goodness of fit. The code then plots the data points with vertical error bars representing the uncertainties and overlays the fitted line on the plot. The result is a visual representation of the linear relationship between the data, along with the associated uncertainties in the measurements and fit parameters.
+
+
+3.) Power Law Fit With Weighted Uncertainties: Fits a power law of the form y = Ax^B to data set, including uncertainties in y (dy). Returns the fit parameters A and B with their corresponding uncertainties, the chi^2 value and plots the fit line to the supplied data points.
