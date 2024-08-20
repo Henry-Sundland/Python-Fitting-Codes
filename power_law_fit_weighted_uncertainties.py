@@ -39,6 +39,8 @@ B_uncertainty = np.sqrt(S_xx/delta)
 # Convert back to original space
 a_fit = np.exp(B)
 b_fit = A
+uncertainty_b_fit = A_uncertainty
+uncertainty_a_fit = a_fit*B_uncertainty
 
 # Recalculate the fit in original space
 y_fit = a_fit * x**b_fit
@@ -48,10 +50,8 @@ residuals = Y - (A * X + B)
 chi_squared = np.sum(weights * residuals**2)
 
 print("Chi^2 value is: ", chi_squared)
-print("A (slope) is: ", A, "+/-", A_uncertainty)
-print("B (intercept) is: ", B, "+/-", B_uncertainty)
-print("a (coefficient) is: ", a_fit)
-print("b (exponent) is: ", b_fit)
+print("a (coefficient) is: ", a_fit, "+/- ", uncertainty_a_fit)
+print("b (exponent) is: ", b_fit, "+/- ", uncertainty_b_fit)
 
 # Plotting the fit function
 plt.errorbar(x, y, yerr=dy, fmt='o', label='Data with uncertainties', color='blue', ecolor='gray', capsize=5)
